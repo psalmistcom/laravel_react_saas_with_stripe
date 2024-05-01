@@ -41,7 +41,7 @@ class Feature1Controller extends Controller
         $user->decreaseCredits(
             $this->feature->required_credits
         );
-
+        $result = $number1 + $number2;
         UsedFeature::create([
             'feature_id' => $this->feature->id,
             'user_id' => $user->id,
@@ -49,7 +49,7 @@ class Feature1Controller extends Controller
             'data' => $data,
         ]);
 
-        $result = $number1 + $number2;
+
         return to_route('feature1.index')
             ->with('answer', $result);
     }

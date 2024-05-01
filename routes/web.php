@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CreditController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Feature1Controller;
 use App\Http\Controllers\Feature2Controller;
 use App\Http\Controllers\ProfileController;
@@ -21,6 +22,9 @@ Route::post('/buy-credits/webhook', [CreditController::class, 'webhook'])
     ->name('credit.webhook');
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
+
     Route::get('feature1', [Feature1Controller::class, 'index'])
         ->name('feature1.index');
     Route::post('feature1', [Feature1Controller::class, 'calculate'])
@@ -42,9 +46,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('credit.buy');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
