@@ -11,7 +11,7 @@ class UsedFeature extends Model
     use HasFactory;
 
     protected $fillable = [
-        'featured_id',
+        'feature_id',
         'user_id',
         'credits'
     ];

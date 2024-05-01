@@ -49,7 +49,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function descreaseCredits(int $credits): self
+    public function decreaseCredits(int $credits): self
     {
         $this->available_credits -= $credits;
         $this->save();

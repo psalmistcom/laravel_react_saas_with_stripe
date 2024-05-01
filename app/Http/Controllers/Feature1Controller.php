@@ -38,7 +38,7 @@ class Feature1Controller extends Controller
         $number1 = (float) $data['number1'];
         $number2 = (float) $data['number2'];
 
-        $user->descreaseCredits(
+        $user->decreaseCredits(
             $this->feature->required_credits
         );
 
@@ -49,7 +49,8 @@ class Feature1Controller extends Controller
             'data' => $data,
         ]);
 
+        $result = $number1 + $number2;
         return to_route('feature1.index')
-            ->with('answer', $number1 + $number2);
+            ->with('answer', $result);
     }
 }
