@@ -15,14 +15,7 @@ export default function Welcome({ auth, features }) {
     return (
         <>
             <Head title="Welcome" />
-            {/* <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-black/50 dark:text-white/50"> */}
             <div className="bg-gradient-to-l from-slate-900 from-10% to-slate-800 to-90% text-black/50 dark:text-white/50">
-                {/* <img
-                    id="background"
-                    width="0"
-                    className="absolute -left-20 top-0 max-w-[877px]"
-                    src="https://laravel.com/assets/img/welcome/background.svg"
-                /> */}
                 <div className="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                     <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                         <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
@@ -67,6 +60,13 @@ export default function Welcome({ auth, features }) {
                         </header>
 
                         <main className="mt-6">
+                            <div className="my-5">
+                                <p className="flex justify-center items-center text-gray-400 capitalize">
+                                    fully functional Software as a service
+                                    project (SaaS) with Laravel 11, React,
+                                    Tailwind.css and Stripe online payments.
+                                </p>
+                            </div>
                             <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                                 {features.data.map((feature) => (
                                     <Link
@@ -77,7 +77,7 @@ export default function Welcome({ auth, features }) {
                                             <img src={feature.image} alt="" />
                                         </div>
 
-                                        <div className="pt-3 sm:pt-5">
+                                        <div className="">
                                             <h2 className="text-xl font-semibold text-black dark:text-white">
                                                 {feature.name}
                                             </h2>
@@ -104,6 +104,18 @@ export default function Welcome({ auth, features }) {
                                 ))}
                             </div>
                         </main>
+                        <footer className="py-16 text-center text-sm text-black dark:text-white/70">
+                            Built with Love by{" "}
+                            <a
+                                href="https://highq.com.ng"
+                                target="_blank"
+                                rel="noopener"
+                                className="hover:underline text-gray-500"
+                            >
+                                {" "}
+                                HighQ Innovations
+                            </a>
+                        </footer>
                     </div>
                 </div>
             </div>
