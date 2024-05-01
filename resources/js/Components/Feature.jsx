@@ -45,7 +45,7 @@ export default function Feature({ feature, answer, children }) {
                                         You don't have enough credits for this
                                         feature. Go{" "}
                                         <Link
-                                            href="/"
+                                            href={route("credit.index")}
                                             className="underline hover:no-underline"
                                         >
                                             Buy more credits

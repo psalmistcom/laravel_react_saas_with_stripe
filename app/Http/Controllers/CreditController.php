@@ -108,13 +108,14 @@ class CreditController extends Controller
                     $transaction->status = 'paid';
                     $transaction->save();
                     $transaction->user->available_credits += $transaction->credits;
+                    $transaction->user->save();
                 }
-
                 break;
-
             default:
                 echo 'Received unknown event type' . $event->type;
                 break;
         }
+
+        return response('');
     }
 }
