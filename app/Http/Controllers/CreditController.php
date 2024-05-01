@@ -99,7 +99,7 @@ class CreditController extends Controller
 
         // Handle event 
         switch ($event->type) {
-            case 'checkout.session.commpleted':
+            case 'checkout.session.completed':
                 $session = $event->data->object;
 
                 $transaction = Transaction::where('session_id', $session->id)
